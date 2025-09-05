@@ -104,9 +104,11 @@
 
     // --- Authentication and Initialization ---
 
-    // Listen for authentication state changes
+    // The onAuthStateChanged listener is the primary way to handle authentication state.
+    // It's called immediately on page load to check the user's current status.
     onAuthStateChanged(auth, async (user) => {
         if (user) {
+            // User is signed in. Proceed with app functionality.
             userId = user.uid;
             userIdDisplay.textContent = userId;
             authReady = true;
@@ -115,7 +117,7 @@
             // Start listening for data changes after successful authentication
             listenForMessages();
         } else {
-            // Sign in anonymously if no user is found
+            // No user is signed in. Attempt to sign in anonymously.
             try {
                 if (__initial_auth_token) {
                     await signInWithCustomToken(auth, __initial_auth_token);
