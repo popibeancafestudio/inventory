@@ -13,7 +13,15 @@
 
         // IMPORTANT: These global variables are provided by the canvas environment. Do not modify.
         const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
-        const firebaseConfig = JSON.parse(typeof __firebase_config !== 'undefined' ? __firebase_config : '{}');
+        const firebaseConfig = {
+          apiKey: "AIzaSyC3C4HPktPmnu6E_N4PzKvW-eTLjYds8Gk",
+          authDomain: "inventory-9feab.firebaseapp.com",
+          projectId: "inventory-9feab",
+          storageBucket: "inventory-9feab.firebasestorage.app",
+          messagingSenderId: "10828991477",
+          appId: "1:10828991477:web:cc50c1bb30a152579b2ebc",
+          measurementId: "G-QZBEE87TVH"
+        };
         const initialAuthToken = typeof __initial_auth_token !== 'undefined' ? __initial_auth_token : null;
 
         // Set log level to 'Debug' for detailed console output
